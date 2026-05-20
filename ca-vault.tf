@@ -6,6 +6,11 @@ locals {
   default_issuer = one([for key, val in data.vault_pki_secret_backend_issuers.intca.key_info : key if jsondecode(val).is_default])
 }
 
+import {
+  id = "intca/roles/servers"
+  to = vault_pki_secret_backend_role.servers
+}
+
 resource "vault_pki_secret_backend_role" "servers" {
   backend          = "intca"
   name             = "servers"
