@@ -1,2 +1,2 @@
-consul_datacenter = "system-internal"
-nomad_region      = "global"
+consul_datacenter = "home"
+nomad_region      = "homelab"
